@@ -40,7 +40,7 @@ class TodoListState extends State<TodoList> {
     //initialize database connection
     _todoHelper.initializeDatabase().then((value){
       // print('---database initialize');
-
+//get all the existing todos
       setState(() {
         _todoItems = _todoHelper.getTodos();
       });
@@ -153,7 +153,7 @@ class TodoListState extends State<TodoList> {
             return Center(child: Text('Error: ${snapshot.error}'));
           }
           else {
-            //  data found form the sqflit db
+            //  data found from the sqflit db
             if(snapshot.hasData && !snapshot.data!.isEmpty) {
               return ListView(
                 padding: const EdgeInsets.all(8),
